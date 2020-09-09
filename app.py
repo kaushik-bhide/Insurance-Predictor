@@ -12,19 +12,22 @@ def predict(model, input_df):
 
 def run():
 
-    
+    from PIL import Image
+    image = Image.open('logo.png')
+    image_hospital = Image.open('hospital.jpg')
 
+    
 
     add_selectbox = st.sidebar.selectbox(
     "How would you like to predict?",
     ("Online", "Batch"))
 
-    st.sidebar.info('This Project is Developed By Kaushik Bhide TCOD62 Hospital Prediction')
+    st.sidebar.info('This app is created to predict patient hospital charges')
     st.sidebar.success('https://www.pycaret.org')
     
-    
+    st.sidebar.image(image_hospital)
 
-    st.title("Insurance Charges Prediction App By TCOD62 Kaushik Bhide")
+    st.title("Insurance Charges Prediction App Made By Kaushik Bhide TCOD62")
 
     if add_selectbox == 'Online':
 
@@ -45,7 +48,7 @@ def run():
 
         if st.button("Predict"):
             output = predict(model=model, input_df=input_df)
-            output = '₹' + str(output)
+            output = '$' + str(output)
 
         st.success('The output is {}'.format(output))
 
