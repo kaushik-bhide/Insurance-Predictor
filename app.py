@@ -14,7 +14,6 @@ def run():
 
     from PIL import Image
     image = Image.open(r'logo.png')
-    image_hospital = Image.open('hospital.jpg')
 
     st.image(image,use_column_width=False)
 
@@ -25,7 +24,7 @@ def run():
     st.sidebar.info('This Project is Developed By Kaushik Bhide TCOD62 Hospital Prediction')
     st.sidebar.success('https://www.pycaret.org')
     
-    st.sidebar.image(image_hospital)
+    
 
     st.title("Insurance Charges Prediction App By TCOD62 Kaushik Bhide")
 
